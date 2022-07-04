@@ -1,0 +1,127 @@
+ 💻📲 
+   ADB - windows
+
+   =Para o windows listar o SmartPhone=
+
+     PRÉ-Requisitos: no Android
+         1 developer mode must be able (modo desevolver no celular precisa estar habilitado)
+         2 USB debugging must be able (modo USB debugging no celular precisa estar habilitado)
+         3 Cable must be data type ( cabo de dados necessario - alguns cabos sao somente de energia, se atentar a isso )
+         4 -SDK-DLLs-must be local (mover pra c:\temp ' Adb' )- ( os arquivos que serao necessarios pra rodar, precisam estar em um local de facil acesso proximo a raiz da unidade C )
+    (   files download server link
+
+Abaixo link para download dos arquivos necessarios.
+
+adb
+https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+
+https://discord.com/channels/982166366364782644/993441692663431188/993575509906694227  )
+
+Para Listar o Host (e exibir o codigo do celular que o windows interpreta) {
+               .
+  Abrir o cmd como modo ADM
+  navegar ate: raiz (c) cd.. cd..
+  navegar ate: cd tempWB\Adb\platform-tools - Android
+         ,resultado no cmd: C:\tempWB\Adb\platform-tools - Android>
+
+    entrar comando: adb devices
+    ( C:\tempWB\Adb\platform-tools - Android>adb devices )
+
+  resultado example:   List of devices attached
+                      4x60xxxxxxxxx901        device
+
+abrir notepad e
+guardar o device cod (no bloco de notas, note++, sublime e etc ) .      <================= PASSO IMPORTANTE p/ usar no Scrcpy 
+            } 
+Lista com (alguns) comandos Adb ( baW1.008995.2 )
+
+STARTA um link/app no celular via prompt
+adb shell am start -a android.intent.action.VIEW -d
+            comando exemplo
+                 adb shell am start -a android.intent.action.VIEW -d https://www.uol.com.br/
+                 ( dica: teste substituir esse link do uol por outros links de sua preferencia )
+
+encerrar um package ( adb shell am force-stop )
+   adb shell am force-stop com.google.android.apps.youtube.music
+             o exemplo acima encerra o YT Music
+   adb shell am force-stop com.spotify.music
+             e o acima encerra o Spotify
+
+adb reboot
+             reinicia o celular
+
+adb install 
+     instala apks (apps) vindos da raiz C
+          comando exemplo 
+               adb install C:\apk\AudioMusic.apk
+
+adb shell am force-stop 
+         encerra um app
+         exemplo p/ fechar o youtube:
+         adb shell am force-stop com.google.android.youtube
+
+
+adb usb
+     restartar conexoes USB com SPs.
+
+Site com + Listas de comandos Adb:
+1 -
+https://technastic.com/adb-commands-list-adb-cheat-sheet/
+
+2 - http://adbcommand.com/articles/use%20dumpsys%20command%20to%20get%20all%20activities%20or%20current%20activity%20in%20app
+
+windows adb:
+Fonte1: https://www.xda-developers.com/install-adb-windows-macos-linux/
+
+                 ]-- 
+--[
+
+
+                /////////////AGORA O OUTRO/////////////
+
+
+
+         ❇️
+   Scrcpy - Windows
+
+   =Controlar Android ( espelhamento de tela ) pelo computador via cabo USB no Windows=
+
+
+    PRÉ-Requisitos: no Android
+         1 developer mode must be able (modo desevolver no celular precisa estar habilitado)
+         2 USB debugging must be able (modo USB debugging no celular precisa estar habilitado)
+         3 Cable must be data type ( cabo de dados necessario - alguns cabos sao somente de energia, se atentar a isso )
+         4 -SDK-DLLs-must be local (mover pra c:\temp ' Adb' )- ( os arquivos que serao necessarios pra rodar, precisam estar em um local de facil acesso proximo a raiz da unidade C )
+    (   files download server link below:
+
+
+Abaixo link para download dos arquivos necessarios.
+
+scrcpy 
+https://github.com/Genymobile/scrcpy/releases/download/v1.24/scrcpy-win64-v1.24.zip
+
+https://discord.com/channels/982166366364782644/993441692663431188/993575509906694227  )
+
+WB.. Open Instance_in_Win to control S.Phone
+               {
+
+ cmd com ADM
+  navegar ate: raiz (c) cd.. cd.. cd..
+  navegar ate: cd tempWB\Scrcpy
+         ,resultado no cmd: C:\tempWB\Scrcpy>
+
+    entrar comando: scrcpy -s 4x60xxxxxxxxx901
+    (C:\tempWB\Scrcpy>scrcpy -s 4x60xxxxxxxxx901)
+resultado example (caso ok) : 
+
+   1 - Abrira Janela do DeviceS.Phone permitindo controlar
+        com mouse e teclado o android.
+
+  2 - E no prompt ( cmd )
+       scrcpy 1.24 https://github.com/Genymobile/scrcpy
+       C:\tempWB\Scrcpy\scrcpy-server: 1 file pushed, 0 skipped. 27.5 MB/s      (41159 bytes in 0.001s)
+       [server] INFO: Device: samsung/moto./asus SM-G200L (Android 5.1.1)
+       INFO: Renderer: direct3d
+       INFO: Initial texture: 480x800
+
+        }
