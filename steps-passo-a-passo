@@ -16,6 +16,7 @@ adb
 https://dl.google.com/android/repository/platform-tools-latest-windows.zip
 
 
+
 Para Listar o Host (e exibir o codigo do celular que o windows interpreta) {
                .
   Abrir o cmd como modo ADM
@@ -123,4 +124,10 @@ resultado example (caso ok) :
        INFO: Renderer: direct3d
        INFO: Initial texture: 480x800
 
+      
+
         }
+
+          alternative data link GDrive ( with Atalhos.lnk's folders "Scrcpy/WinAtalhos e pontoICO" ): 
+          https://drive.google.com/drive/folders/1vdG6XUi7-xvXYw5jScC1e6IVFNpVRQ_u
+
